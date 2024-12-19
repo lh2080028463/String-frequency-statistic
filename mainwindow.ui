@@ -105,7 +105,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="enterButton">
        <property name="text">
         <string>确认</string>
        </property>
