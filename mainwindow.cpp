@@ -16,6 +16,11 @@ MainWindow::MainWindow(QWidget *parent)
         this->ppage2->show();
 
     });
+
+    connect(this->ppage2,&MyMainWindow::back,[=](){
+        this->ppage2->hide();
+        this->show();
+    });
 }
 
 MainWindow::~MainWindow()
