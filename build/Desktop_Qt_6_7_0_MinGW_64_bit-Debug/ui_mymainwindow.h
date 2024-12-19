@@ -35,7 +35,7 @@ public:
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *quitButton;
-    QPushButton *pushButton_2;
+    QPushButton *enterButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -80,10 +80,10 @@ public:
 
         horizontalLayout_2->addWidget(quitButton);
 
-        pushButton_2 = new QPushButton(layoutWidget1);
-        pushButton_2->setObjectName("pushButton_2");
+        enterButton = new QPushButton(layoutWidget1);
+        enterButton->setObjectName("enterButton");
 
-        horizontalLayout_2->addWidget(pushButton_2);
+        horizontalLayout_2->addWidget(enterButton);
 
         MyMainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MyMainWindow);
@@ -117,7 +117,7 @@ public:
         comboBox->setItemText(3, QCoreApplication::translate("MyMainWindow", "\346\225\260\346\215\256\346\237\245\347\234\213", nullptr));
 
         quitButton->setText(QCoreApplication::translate("MyMainWindow", "\350\277\224\345\233\236", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MyMainWindow", "\347\241\256\350\256\244", nullptr));
+        enterButton->setText(QCoreApplication::translate("MyMainWindow", "\347\241\256\350\256\244", nullptr));
     } // retranslateUi
 
 };

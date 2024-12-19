@@ -8,9 +8,22 @@ MyMainWindow::MyMainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    this->ppage2=new MyMainWindow2;//实例化页面三（用于绘制图表）
+
     //返回窗口一
     connect(ui->quitButton,&QPushButton::clicked,[=](){
         emit this->back();
+    });
+
+    //进入窗口三
+    connect(ui->enterButton,&QPushButton::clicked,[=](){
+        this->hide();
+        this->ppage2->show();
+    });
+
+    connect(this->ppage2,&MyMainWindow2::back,[=](){
+        this->ppage2->hide();
+        this->show();
     });
 }
 
