@@ -38,6 +38,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QPushButton *quitButton;
     QPushButton *enterButton;
+    QLabel *label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -88,6 +89,9 @@ public:
 
         horizontalLayout_3->addWidget(enterButton);
 
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(140, 250, 111, 20));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -120,13 +124,14 @@ public:
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#9c9c9c;\">\350\276\223\345\205\245\346\226\207\346\234\254\346\210\226\346\226\207\344\273\266\345\234\260\345\235\200</span></p></body></html>", nullptr));
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\346\226\207\346\234\254\350\276\223\345\205\245\346\226\271\345\274\217\357\274\232", nullptr));
         comboBox_2->setItemText(0, QCoreApplication::translate("MainWindow", "\347\233\264\346\216\245\350\276\223\345\205\245", nullptr));
         comboBox_2->setItemText(1, QCoreApplication::translate("MainWindow", "\346\226\207\344\273\266\350\257\273\345\217\226", nullptr));
 
         quitButton->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
         enterButton->setText(QCoreApplication::translate("MainWindow", "\347\241\256\350\256\244", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "\350\276\223\345\205\245\346\226\207\346\234\254\346\210\226\346\226\207\344\273\266\345\234\260\345\235\200\357\274\232", nullptr));
     } // retranslateUi
 
 };
