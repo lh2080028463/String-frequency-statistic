@@ -72,7 +72,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox_2">
+      <widget class="QComboBox" name="combobox">
        <item>
         <property name="text">
          <string>直接输入</string>

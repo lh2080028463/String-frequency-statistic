@@ -33,7 +33,7 @@ public:
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
-    QComboBox *comboBox_2;
+    QComboBox *combobox;
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_3;
     QPushButton *quitButton;
@@ -66,12 +66,12 @@ public:
 
         horizontalLayout_2->addWidget(label_2);
 
-        comboBox_2 = new QComboBox(layoutWidget);
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->setObjectName("comboBox_2");
+        combobox = new QComboBox(layoutWidget);
+        combobox->addItem(QString());
+        combobox->addItem(QString());
+        combobox->setObjectName("combobox");
 
-        horizontalLayout_2->addWidget(comboBox_2);
+        horizontalLayout_2->addWidget(combobox);
 
         layoutWidget1 = new QWidget(centralwidget);
         layoutWidget1->setObjectName("layoutWidget1");
@@ -126,8 +126,8 @@ public:
 "</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\346\226\207\346\234\254\350\276\223\345\205\245\346\226\271\345\274\217\357\274\232", nullptr));
-        comboBox_2->setItemText(0, QCoreApplication::translate("MainWindow", "\347\233\264\346\216\245\350\276\223\345\205\245", nullptr));
-        comboBox_2->setItemText(1, QCoreApplication::translate("MainWindow", "\346\226\207\344\273\266\350\257\273\345\217\226", nullptr));
+        combobox->setItemText(0, QCoreApplication::translate("MainWindow", "\347\233\264\346\216\245\350\276\223\345\205\245", nullptr));
+        combobox->setItemText(1, QCoreApplication::translate("MainWindow", "\346\226\207\344\273\266\350\257\273\345\217\226", nullptr));
 
         quitButton->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
         enterButton->setText(QCoreApplication::translate("MainWindow", "\347\241\256\350\256\244", nullptr));

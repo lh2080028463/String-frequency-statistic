@@ -1,6 +1,7 @@
 #include "mymainwindow.h"
 #include "ui_mymainwindow.h"
 #include<QPushButton>
+#include"interface.h"
 
 MyMainWindow::MyMainWindow(QWidget *parent)
     : QMainWindow(parent)
