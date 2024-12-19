@@ -98,7 +98,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="quitButton">
        <property name="text">
         <string>退出</string>
        </property>
