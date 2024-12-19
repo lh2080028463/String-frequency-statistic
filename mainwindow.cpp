@@ -21,6 +21,10 @@ MainWindow::MainWindow(QWidget *parent)
         this->ppage2->hide();
         this->show();
     });
+
+    connect(ui->quitButton,&QPushButton::clicked,[=](){
+        this->close();
+    });
 }
 
 MainWindow::~MainWindow()
