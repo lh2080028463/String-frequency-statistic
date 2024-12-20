@@ -16,10 +16,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->enterButton,&QPushButton::clicked,[=](){
         extern QMap<QString,int>m;
+        QString s;
+
         m.clear();
         int flag=ui->combobox->currentIndex();//0为直接输入，1为文件输入
         if(!flag){
-            QString s = ui->textEdit->toPlainText();
+            s = ui->textEdit->toPlainText();
             int l,r,len=s.length();
 
             l=0;
@@ -44,6 +46,14 @@ MainWindow::MainWindow(QWidget *parent)
             QString runPath = QCoreApplication::applicationDirPath();//获取项目的根路径
             QString file_name = QFileDialog::getOpenFileName(this,QStringLiteral("选择文件"),runPath,"Text Files(*.txt)",nullptr,QFileDialog::DontResolveSymlinks);
 
+            if(!file_name.isEmpty()){
+                QFile file(file_name);
+                bool isok = file.open(QIODevice::ReadOnly);
+                if(isok){
+                    ui->textEdit->setPlainText(file.readAll());
+                }
+                file.close();
+            }
         }
         this->hide();
         this->ppage2->show();
