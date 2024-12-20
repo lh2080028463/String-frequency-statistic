@@ -4,6 +4,7 @@
 #include<QPushButton>
 #include"interface.h"
 #include<QMap>
+#include<QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,27 +15,42 @@ MainWindow::MainWindow(QWidget *parent)
     this->ppage2=new MyMainWindow;//实例化页面二
 
     connect(ui->enterButton,&QPushButton::clicked,[=](){
-        int flag=ui->combobox->currentIndex();//0为直接输入，1为文件输入
-        if(!flag){
-            QString s = ui->textEdit->toPlainText();
-            int l,r,len=s.length();
-            extern QMap<QString,int>m;
-            l=0;
-            s+="#";
+        extern QMap<QString,int>m;
+        QString s;
 
-            while(l<len){
-                if(suit(s[l])){
-                    QString temp;
-                    r=l+1;
-                    while(r<len&&suit(s[r]))r++;
-                    temp=s.mid(l,r-l);
-                    if(m.contains(temp))m[temp]+=1;
-                    else m.insert(temp,1);
-                    l=r+1;
+        m.clear();
+        int flag=ui->combobox->currentIndex();//0为直接输入，1为文件输入
+        if(flag){
+            QString runPath = QCoreApplication::applicationDirPath();//获取项目的根路径
+            QString file_name = QFileDialog::getOpenFileName(this,QStringLiteral("选择文件"),runPath,"Text Files(*.txt)",nullptr,QFileDialog::DontResolveSymlinks);
+            ui->textEdit->clear();
+            if(!file_name.isEmpty()){
+                QFile file(file_name);
+                bool isok = file.open(QIODevice::ReadOnly);
+                if(isok){
+                    ui->textEdit->setPlainText(file.readAll());
                 }
-                else{
-                    l++;
-                }
+                file.close();
+            }
+        }
+        s = ui->textEdit->toPlainText();
+        int l,r,len=s.length();
+
+        l=0;
+        s+="#";
+
+        while(l<len){
+            if(suit(s[l])){
+                QString temp;
+                r=l+1;
+                while(r<len&&suit(s[r]))r++;
+                temp=s.mid(l,r-l);
+                if(m.contains(temp))m[temp]+=1;
+                else m.insert(temp,1);
+                l=r+1;
+            }
+            else{
+                l++;
             }
         }
         this->hide();
