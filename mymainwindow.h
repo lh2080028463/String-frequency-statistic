@@ -19,7 +19,7 @@ public:
 
     MyMainWindow2*ppage2=NULL;//页面三实例化对象地址
 private slots:
-    void onEnterButtonClicked(QMap<QString, int> data);  // 按钮点击槽函数
+    void onEnterButtonClicked(QMap<QString, int> data,int index);  // 按钮点击槽函数
 signals:
     void back();
 
