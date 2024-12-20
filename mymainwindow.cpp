@@ -2,6 +2,10 @@
 #include "ui_mymainwindow.h"
 #include<QPushButton>
 #include"interface.h"
+#include "mymainwindow2.h"
+#include<QString>
+
+extern QMap<QString,int>m;
 
 MyMainWindow::MyMainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,11 +21,9 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     });
 
     //进入窗口三
-    connect(ui->enterButton,&QPushButton::clicked,[=](){
-        this->hide();
-        this->ppage2->show();
+    connect(ui->enterButton,&QPushButton::clicked,this,[this](){
+        onEnterButtonClicked(m);
     });
-
     connect(this->ppage2,&MyMainWindow2::back,[=](){
         this->ppage2->hide();
         this->show();
@@ -31,4 +33,19 @@ MyMainWindow::MyMainWindow(QWidget *parent)
 MyMainWindow::~MyMainWindow()
 {
     delete ui;
+}
+
+
+void MyMainWindow::onEnterButtonClicked(QMap<QString, int> data)
+{
+
+    // 创建一个新的 MyMainWindow2 窗口
+    MyMainWindow2 *chartWindow = new MyMainWindow2;
+
+    // 绘制柱状图
+    int num=fmin(data.size(),5);
+    chartWindow->drawBarChart(data, num);
+
+    // 显示窗口
+    chartWindow->show();
 }
