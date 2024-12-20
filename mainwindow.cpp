@@ -4,6 +4,7 @@
 #include<QPushButton>
 #include"interface.h"
 #include<QMap>
+#include<QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,11 +15,13 @@ MainWindow::MainWindow(QWidget *parent)
     this->ppage2=new MyMainWindow;//实例化页面二
 
     connect(ui->enterButton,&QPushButton::clicked,[=](){
+        extern QMap<QString,int>m;
+        m.clear();
         int flag=ui->combobox->currentIndex();//0为直接输入，1为文件输入
         if(!flag){
             QString s = ui->textEdit->toPlainText();
             int l,r,len=s.length();
-            extern QMap<QString,int>m;
+
             l=0;
             s+="#";
 
@@ -36,6 +39,11 @@ MainWindow::MainWindow(QWidget *parent)
                     l++;
                 }
             }
+        }
+        else{
+            QString runPath = QCoreApplication::applicationDirPath();//获取项目的根路径
+            QString file_name = QFileDialog::getOpenFileName(this,QStringLiteral("选择文件"),runPath,"Text Files(*.txt)",nullptr,QFileDialog::DontResolveSymlinks);
+
         }
         this->hide();
         this->ppage2->show();
