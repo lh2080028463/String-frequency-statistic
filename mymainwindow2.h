@@ -15,8 +15,14 @@ class MyMainWindow2 : public QMainWindow
 public:
     explicit MyMainWindow2(QWidget *parent = nullptr);
     ~MyMainWindow2();
-    void drawBarChart(QMap<QString, int> data, int n);  // 绘制柱状图
-    void drawPieChart(QMap<QString, int> data, int n);  //绘制饼状图
+    void drawBarChart(QMap<QString, int> data,
+                      int n,
+                      std::function<bool(
+                          const std::pair<QString, int>& left, const std::pair<QString, int>& right)> cmp);  // 绘制柱状图
+    void drawPieChart(QMap<QString, int> data,
+                      int n,
+                      std::function<bool(
+                          const std::pair<QString, int>& left, const std::pair<QString, int>& right)> cmp);  //绘制饼状图
 signals:
     void back();
 

@@ -22,13 +22,7 @@ MyMainWindow::MyMainWindow(QWidget *parent)
 
     //进入窗口三
     connect(ui->enterButton,&QPushButton::clicked,this,[this](){
-        int numvis,charttype;
-
-        numvis=ui->combobox2->currentIndex()+1;//展示的个数
-        charttype=ui->combobox3->currentIndex();//0为最大的n个，1为最小的n个
-
         if(ui->comboBox->currentText()=="柱状图"){
-
             onEnterButtonClicked(m,1);
         }
         else if(ui->comboBox->currentText()=="饼状图"){
@@ -60,16 +54,32 @@ void MyMainWindow::onEnterButtonClicked(QMap<QString, int> data,int index)
     }
     case 1:// 绘制柱状图
     {
-        int num=fmin(data.size(),5);
         chartWindow->setWindowTitle("柱状图");
-        chartWindow->drawBarChart(data, num);
+        if(ui->combobox3->currentIndex()==0){
+            chartWindow->drawBarChart(data, ui->combobox2->currentIndex()+1,[=](const std::pair<QString, int>& left, const std::pair<QString, int>& right) {
+                return left.second > right.second;
+            });
+        }
+        else if(ui->combobox3->currentIndex()==1){
+            chartWindow->drawBarChart(data, ui->combobox2->currentIndex()+1,[=](const std::pair<QString, int>& left, const std::pair<QString, int>& right) {
+                return left.second < right.second;
+            });
+        }
         break;
     }
     case 2:
     {
-        int num=fmin(data.size(),5);
         chartWindow->setWindowTitle("饼状图");
-        chartWindow->drawPieChart(data, num);
+        if(ui->combobox3->currentIndex()==0){
+            chartWindow->drawPieChart(data, ui->combobox2->currentIndex()+1,[=](const std::pair<QString, int>& left, const std::pair<QString, int>& right) {
+                return left.second > right.second;
+            });
+        }
+        else if(ui->combobox3->currentIndex()==1){
+            chartWindow->drawPieChart(data, ui->combobox2->currentIndex()+1,[=](const std::pair<QString, int>& left, const std::pair<QString, int>& right) {
+                return left.second < right.second;
+            });
+        }
         break;
     }
     default:
