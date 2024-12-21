@@ -23,11 +23,11 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     //进入窗口三
     connect(ui->enterButton,&QPushButton::clicked,this,[this](){
         if(ui->comboBox->currentText()=="柱状图"){
+
             onEnterButtonClicked(m,1);
         }
-        else if(ui->comboBox->currentText()=="饼状图")
-            {
-
+        else if(ui->comboBox->currentText()=="饼状图"){
+            onEnterButtonClicked(m,2);
         }
     });
     connect(this->ppage2,&MyMainWindow2::back,[=](){
@@ -53,20 +53,24 @@ void MyMainWindow::onEnterButtonClicked(QMap<QString, int> data,int index)
     {
 
     }
-    case 1:
+    case 1:// 绘制柱状图
     {
         int num=fmin(data.size(),5);
+        chartWindow->setWindowTitle("柱状图");
         chartWindow->drawBarChart(data, num);
         break;
     }
     case 2:
     {
-
+        int num=fmin(data.size(),5);
+        chartWindow->setWindowTitle("饼状图");
+        chartWindow->drawPieChart(data, num);
+        break;
     }
     default:
         break;
     }
-    // 绘制柱状图
+
 
 
     // 显示窗口

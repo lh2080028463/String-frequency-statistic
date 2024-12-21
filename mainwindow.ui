@@ -59,13 +59,18 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <rect>
       <x>300</x>
       <y>180</y>
-      <width>191</width>
-      <height>24</height>
+      <width>201</width>
+      <height>51</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>文本输入方式：</string>
        </property>
@@ -73,6 +78,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </item>
      <item>
       <widget class="QComboBox" name="combobox">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
        <item>
         <property name="text">
          <string>直接输入</string>
@@ -91,14 +101,20 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>410</y>
+      <y>379</y>
       <width>291</width>
-      <height>20</height>
+      <height>51</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="QPushButton" name="quitButton">
+       <property name="font">
+        <font>
+         <family>楷体</family>
+         <pointsize>31</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>退出</string>
        </property>
@@ -106,6 +122,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </item>
      <item>
       <widget class="QPushButton" name="enterButton">
+       <property name="font">
+        <font>
+         <family>楷体</family>
+         <pointsize>31</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>确认</string>
        </property>
@@ -121,6 +143,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <width>111</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>输入文本或文件地址：</string>

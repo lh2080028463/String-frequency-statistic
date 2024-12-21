@@ -16,7 +16,7 @@ public:
     explicit MyMainWindow2(QWidget *parent = nullptr);
     ~MyMainWindow2();
     void drawBarChart(QMap<QString, int> data, int n);  // 绘制柱状图
-
+    void drawPieChart(QMap<QString, int> data, int n);  //绘制饼状图
 signals:
     void back();
 

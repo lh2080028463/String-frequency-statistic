@@ -37,15 +37,20 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>290</y>
-      <width>141</width>
-      <height>24</height>
+      <x>270</x>
+      <y>280</y>
+      <width>271</width>
+      <height>61</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>查看方式：</string>
        </property>
@@ -53,6 +58,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </item>
      <item>
       <widget class="QComboBox" name="comboBox">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
        <item>
         <property name="text">
          <string>词云图</string>
@@ -80,22 +90,44 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>240</x>
       <y>350</y>
-      <width>201</width>
-      <height>20</height>
+      <width>311</width>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="quitButton">
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>返回</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>12</width>
+         <height>12</height>
+        </size>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="enterButton">
+       <property name="font">
+        <font>
+         <pointsize>23</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>确认</string>
        </property>

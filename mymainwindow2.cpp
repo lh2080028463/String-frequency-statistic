@@ -35,6 +35,7 @@ MyMainWindow2 ::~MyMainWindow2 ()
     delete ui;
 }
 
+//绘制柱状图
 void MyMainWindow2::drawBarChart(QMap<QString, int> data, int n)
 {
     // 将 QMap 数据转换为排序后的 QVector
@@ -58,10 +59,10 @@ void MyMainWindow2::drawBarChart(QMap<QString, int> data, int n)
         set << sortedData[i].second;
         categories << sortedData[i].first;
     }
-    series->append(&set );
+    series->append(&set);
 
     // 创建图表对象
-   QChart *chart = new QChart;
+    QChart *chart = new QChart;
     chart->addSeries(series);
     chart->setTitle("Top " + QString::number(n) + " Bar Chart");
     chart->setAnimationOptions(QChart::SeriesAnimations);
@@ -74,7 +75,7 @@ void MyMainWindow2::drawBarChart(QMap<QString, int> data, int n)
 
     // 设置 Y 轴（数值轴）
     auto axisY = new QValueAxis;
-    axisY->setRange(0, 60);  // 根据数据范围调整
+    axisY->setRange(0, sortedData[0].second+20);  // 根据数据范围调整
     chart->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
 
@@ -83,5 +84,41 @@ void MyMainWindow2::drawBarChart(QMap<QString, int> data, int n)
     //chart->legend()->setAlignment(Qt::AlignBottom);
 
     // 设置 chartView 来显示图表
+    chartView->setChart(chart);
+}
+
+//绘制饼状图
+void  MyMainWindow2::drawPieChart(QMap<QString, int> data, int n){
+    // 将 QMap 数据转换为排序后的 QVector
+    QVector<std::pair<QString, int>> sortedData;
+    for (auto it = data.constBegin(); it != data.constEnd(); ++it) {
+        sortedData.append(qMakePair(it.key(), it.value()));
+    }
+
+    // 按照值降序排序
+    std::sort(sortedData.begin(), sortedData.end(), [](const std::pair<QString, int>& left, const std::pair<QString, int>& right) {
+        return left.second > right.second;
+    });
+
+    QPieSeries *series = new QPieSeries;
+    QChart *chart = new QChart();
+    chart->setTitle("出现频率最高的前"+QString::number(n)+"个字符串饼状图"); //设置表格标题
+
+    for (int i = 0; i < n && i < sortedData.size(); ++i) {
+        series->append(sortedData[i].first,sortedData[i].second);
+        QPieSlice *tempSlice =series->slices().at(i);
+        //tempSlice->setColor(QColor(255,10*i,0));//设置颜色
+        tempSlice->setLabelVisible(true);
+    }
+
+    //饼状图的缩放因子
+    series->setPieSize(0.6);
+
+    chart->addSeries(series);
+    chart->setAnimationOptions(QChart::AllAnimations);
+    // 设置竖向图例
+    chart->legend()->setAlignment(Qt::AlignRight);
+
+    chart->setTheme(QChart::ChartThemeBlueIcy);
     chartView->setChart(chart);
 }
