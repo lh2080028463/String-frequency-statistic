@@ -53,9 +53,10 @@ MainWindow::MainWindow(QWidget *parent)
                 l++;
             }
         }
-        this->hide();
-        this->ppage2->show();
-
+        if(!m.empty()){
+            this->hide();
+            this->ppage2->show();
+        }
     });
 
     connect(this->ppage2,&MyMainWindow::back,[=](){

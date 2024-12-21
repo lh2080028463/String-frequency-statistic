@@ -22,6 +22,11 @@ MyMainWindow::MyMainWindow(QWidget *parent)
 
     //进入窗口三
     connect(ui->enterButton,&QPushButton::clicked,this,[this](){
+        int numvis,charttype;
+
+        numvis=ui->combobox2->currentIndex()+1;//展示的个数
+        charttype=ui->combobox3->currentIndex();//0为最大的n个，1为最小的n个
+
         if(ui->comboBox->currentText()=="柱状图"){
 
             onEnterButtonClicked(m,1);
