@@ -25,14 +25,13 @@ tableWindow::tableWindow(QWidget *parent)
         ui->tableWidget->horizontalHeader()->setSectionResizeMode(0,QHeaderView::Fixed);
         ui->tableWidget->setColumnWidth(0,80);
 
-
         if(!flag1){
             auto it=m1.constBegin();
             for(int i=0;i<m.size();i++,it++){
                 QTableWidgetItem*temp1=new QTableWidgetItem(it.value());
                 QTableWidgetItem*temp2=new QTableWidgetItem(QString::number(it.key()));
-                ui->tableWidget->setItem(i,0,temp1);
-                ui->tableWidget->setItem(i,1,temp2);
+                ui->tableWidget->setItem(i,0,temp2);
+                ui->tableWidget->setItem(i,1,temp1);
             }
         }
 
@@ -41,8 +40,8 @@ tableWindow::tableWindow(QWidget *parent)
             for(int i=m.size()-1;i>=0;i--,it++){
                 QTableWidgetItem*temp1=new QTableWidgetItem(it.value());
                 QTableWidgetItem*temp2=new QTableWidgetItem(QString::number(it.key()));
-                ui->tableWidget->setItem(i,0,temp1);
-                ui->tableWidget->setItem(i,1,temp2);
+                ui->tableWidget->setItem(i,0,temp2);
+                ui->tableWidget->setItem(i,1,temp1);
             }
         }
         ////////
