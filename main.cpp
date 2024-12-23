@@ -5,6 +5,7 @@
 #include<QMap>
 
 QMap<QString,int>m;
+QString s;
 
 int main(int argc, char *argv[])
 {

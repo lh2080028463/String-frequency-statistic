@@ -16,15 +16,15 @@ MyMainWindow2 ::MyMainWindow2 (QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->quitButton,&QPushButton::clicked,[=](){
-        emit this->back();
-    });
-    setWindowTitle("Bar Chart");
+    // connect(ui->quitButton,&QPushButton::clicked,[=](){
+    //     emit this->back();
+    // });
+    //setWindowTitle("Bar Chart");
     // 创建一个 QChartView 用于显示图表
     chartView = new QChartView(this);
     chartView->setRenderHint(QPainter::Antialiasing);
 
-     chartView->setMinimumSize(800, 600);
+    chartView->setMinimumSize(800, 600);
 
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(chartView);

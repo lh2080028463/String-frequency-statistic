@@ -4,6 +4,7 @@
 #include"interface.h"
 #include "mymainwindow2.h"
 #include<QString>
+#include<chooser.h>
 
 extern QMap<QString,int>m;
 
@@ -91,3 +92,12 @@ void MyMainWindow::onEnterButtonClicked(QMap<QString, int> data,int index)
     // 显示窗口
     chartWindow->show();
 }
+
+void MyMainWindow::on_pushButton_clicked()
+{
+    this->close();
+    Chooser* chooser = new Chooser;
+    chooser->show();
+}
+
+

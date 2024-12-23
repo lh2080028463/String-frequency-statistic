@@ -86,7 +86,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </font>
        </property>
        <property name="text">
-        <string>确认</string>
+        <string>普通统计</string>
        </property>
       </widget>
      </item>
@@ -110,7 +110,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>输入文本或文件地址：</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>271</x>
@@ -152,6 +152,25 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="enterButton_2">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>390</y>
+      <width>142</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>31</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>精确统计</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

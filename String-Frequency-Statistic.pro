@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    chooser.cpp \
     interface.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -16,12 +17,14 @@ SOURCES += \
     mymainwindow2.cpp
 
 HEADERS += \
+    chooser.h \
     interface.h \
     mainwindow.h \
     mymainwindow.h \
     mymainwindow2.h
 
 FORMS += \
+    chooser.ui \
     mainwindow.ui \
     mymainwindow.ui \
     mymainwindow2.ui

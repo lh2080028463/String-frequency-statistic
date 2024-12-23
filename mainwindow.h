@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "mymainwindow.h"//页面二头文件
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -19,6 +20,9 @@ public:
     ~MainWindow();
 
     MyMainWindow*ppage2=NULL;//页面二实例化对象地址
+
+private slots:
+    void on_enterButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
