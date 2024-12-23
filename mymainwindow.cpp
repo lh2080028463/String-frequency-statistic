@@ -15,6 +15,7 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     ui->setupUi(this);
 
     this->ppage2=new MyMainWindow2;//实例化页面三（用于绘制图表）
+    this->ppage3=new tableWindow;//实例化表格页面
 
     //返回窗口一
     connect(ui->quitButton,&QPushButton::clicked,[=](){
@@ -29,11 +30,20 @@ MyMainWindow::MyMainWindow(QWidget *parent)
         else if(ui->comboBox->currentText()=="饼状图"){
             onEnterButtonClicked(m,2);
         }
+        else if(ui->comboBox->currentText()=="数据查看"){
+            this->hide();
+            this->ppage3->show();
+        }
     });
     connect(this->ppage2,&MyMainWindow2::back,[=](){
         this->ppage2->hide();
         this->show();
     });
+    connect(this->ppage3,&tableWindow::back,[=](){
+        this->ppage3->hide();
+        this->show();
+    });
+
 }
 
 MyMainWindow::~MyMainWindow()

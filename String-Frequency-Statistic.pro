@@ -14,20 +14,23 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mymainwindow.cpp \
-    mymainwindow2.cpp
+    mymainwindow2.cpp \
+    tablewindow.cpp
 
 HEADERS += \
     chooser.h \
     interface.h \
     mainwindow.h \
     mymainwindow.h \
-    mymainwindow2.h
+    mymainwindow2.h \
+    tablewindow.h
 
 FORMS += \
     chooser.ui \
     mainwindow.ui \
     mymainwindow.ui \
-    mymainwindow2.ui
+    mymainwindow2.ui \
+    tablewindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -67,6 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
         this->show();
     });
 
+
     connect(ui->quitButton,&QPushButton::clicked,[=](){
         this->close();
     });
