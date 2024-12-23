@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include"mymainwindow2.h"
+#include"tablewindow.h"
 #include<QPushButton>
 #include<QChartView>
 namespace Ui {
@@ -18,6 +19,8 @@ public:
     ~MyMainWindow();
 
     MyMainWindow2*ppage2=NULL;//页面三实例化对象地址
+    tableWindow*ppage3=NULL;//表格页面实例化对象地址
+
 private slots:
     void onEnterButtonClicked(QMap<QString, int> data,int index);  // 按钮点击槽函数
 signals:
