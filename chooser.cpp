@@ -66,6 +66,6 @@ void Chooser::on_pushButton_3_clicked()
     extern QString s;
     QString temp = QString(ui->lineEdit->text()+"出现的频率为"+QString::number(kmpCount(s,ui->lineEdit->text())));
     ui->textBrowser->append(temp);
-    ui->textBrowser->clear();
+   // ui->textBrowser->clear();
 }
 
