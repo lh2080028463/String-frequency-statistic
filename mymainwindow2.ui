@@ -17,11 +17,16 @@
    <widget class="QPushButton" name="quitButton">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>390</y>
-      <width>80</width>
-      <height>18</height>
+      <x>360</x>
+      <y>400</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>返回</string>
