@@ -25,7 +25,6 @@ private slots:
     void onEnterButtonClicked(QMap<QString, int> data,int index);  // 按钮点击槽函数
     void on_pushButton_clicked();
 
-    void on_quitButton_clicked();
 
 signals:
     void back();
