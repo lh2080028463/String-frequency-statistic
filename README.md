@@ -6,7 +6,8 @@
 
 - Qt Creator 6.7
 - MinGW  64-bit
-
+#### 必要资源库
+- QChart
 
 ### 代码规范
 
