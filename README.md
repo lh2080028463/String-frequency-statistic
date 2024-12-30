@@ -4,7 +4,8 @@
 
 - Windows 11
 
-- Qt Creator 6.7
+- Qt 6.7
+- Qt Creator 12.0.2
 - MinGW  64-bit
 #### 必要资源库
 - QChart
