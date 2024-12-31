@@ -5,6 +5,9 @@
 #include <mainwindow.h>
 #include<QVector>
 #include<QString>
+#include <QTableView>
+#include <QStandardItemModel>
+
 namespace Ui {
 class Chooser;
 }
@@ -25,7 +28,7 @@ private slots:
 
 private:
     Ui::Chooser *ui;
-
+    int tableCount;
 };
 
 #endif // CHOOSER_H
