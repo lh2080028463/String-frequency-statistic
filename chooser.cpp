@@ -82,9 +82,14 @@ void Chooser::on_pushButton_3_clicked()
             return;
         }
     }
-    ui->tableWidget->setItem(tableCount,0,temp1);
-    ui->tableWidget->setItem(tableCount,1,temp2);
-    tableCount++;
+    if(tableCount<100)
+    {
+        ui->tableWidget->setItem(tableCount,0,temp1);
+        ui->tableWidget->setItem(tableCount,1,temp2);
+        tableCount++;
+    }
+   else QMessageBox::information(this,"提示窗","数据表格已经满！");
+
     // ui->textBrowser->append(temp);
    // ui->textBrowser->clear();
 }
